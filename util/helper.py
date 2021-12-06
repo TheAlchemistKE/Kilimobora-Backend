@@ -6,17 +6,16 @@ from pymongo import MongoClient
 
 # Config
 serial_port = '/dev/ttyACM0'
-mongo_host = ""
-mongodb = ""
+mongodb = "mongodb+srv://kelyn:Kelyn@cluster0.rvyrf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 location = geocoder.ip('me')
 
 # Serial Connection
 serial_conn = serial.Serial(serial_port, 9600, timeout=0)
 
 # MongoDB Connection
-client = MongoClient(mongodb, 27017)
-db = client[mongodb]
-collection = db['data']
+client = MongoClient(mongodb)
+db = client['kilimobora']
+collection = db['sensor_data']
 
 upload_interval = 10
 while 1:
