@@ -21,6 +21,9 @@ collection = db['sensor_data']
 
 
 def fetch_sensor_data() -> dict:
+    """
+    :return: Dictionary of values gathered from the sensors
+    """
     moisture_reading = serial_conn.readline().rstrip()
     temp_reading = serial_conn.readline().rstrip()
     if moisture_reading and temp_reading:
@@ -35,7 +38,11 @@ def fetch_sensor_data() -> dict:
         return {
             'message': 'Sensors offline'
         }
-def save_data():
+def save_data() -> None:
+    """
+    Loops infinitely and gathers data from the sensors after every 10 seconds
+    :return: Nothing
+    """
     delay = 10
     while 1:
         try:

@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import africastalking
 import pandas as pd
+from util.helper import save_data
 
 app = Flask(__name__)
 
@@ -17,12 +18,6 @@ def render_homepage():
 def render_admin_dashboard():
     return render_template('admin.html')
 
-@app.route('/api/v1/upload', methods=['POST'])
-def upload_data(data: dict) -> dict:
-    return {
-        'message': 'Data uploaded.'
-    }
-
 @app.route('/api/v1/visualize')
 def visualize_data():
     return "Visualizing data"
@@ -36,4 +31,5 @@ def send_sms():
 
 
 if __name__ == '__main__':
+    save_data()
     app.run(debug=True)
