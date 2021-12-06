@@ -25,7 +25,6 @@ def visualize_data():
 
 @app.route('/api/v1/sms')
 def send_sms():
-
     return "Sending data to the Farmer"
 
 
