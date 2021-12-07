@@ -17,7 +17,7 @@ void loop()
 {
  output_value= analogRead(sensor_pin);
  output_value = map(output_value,550,10,0,100);
- Serial.print("Mositure : ");
+ Serial.print("Moisture : ");
  Serial.print(output_value);
  Serial.println("%");
  if(output_value<20){
