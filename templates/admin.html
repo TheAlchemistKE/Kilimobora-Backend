@@ -6,6 +6,34 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 </head>
 <body>
-  <h1>Welcome to the Admin Dashboard.</h1>
+      <header>
+           <nav id="navbar">
+               <h3>Kilimobora</h3>
+               <ul class="navlinks">
+                   <li class="navlink">
+                       <a href="/">Home</a>
+                   </li>
+                   <li class="navlink">
+                       <a href="/api/v1/visualize">Visualization</a>
+                   </li>
+                   <li class="navlink">
+                       <a href="/dashboard">Dashboard</a>
+                   </li>
+               </ul>
+           </nav>
+      </header>
+      <section id="moisture-viz">
+          <h3>Moisture </h3>
+          <canvas id="moisture_chart" width="400" height="400"></canvas>
+          <p>Lorem ipsum dolor sit amet</p>
+      </section>
+
+      <section id="temp-viz">
+          <h3>Temperature Summary</h3>
+          <canvas id="temp_chart" width="400" height="400"></canvas>
+          <p>Lorem ipsum dolor sit amet</p>
+      </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </body>
 </html>

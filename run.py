@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import africastalking
 import pandas as pd
-from util.helper import save_data
+# from util.helper import save_data
 
 app = Flask(__name__)
 
@@ -31,5 +31,5 @@ def send_sms():
 
 
 if __name__ == '__main__':
-    save_data()
+    # save_data()
     app.run(debug=True)
